@@ -1,0 +1,136 @@
+:root{
+    color: black;
+    font-size: 16px;
+}
+html{
+    height: 10000px;
+    font-family: Raleway;
+    background-color: rgb(59, 55, 55);
+    position: relative;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    height: 10rem;
+    background-color: black;
+    font-family: Agbalumo;
+    color: rgb(218, 218, 218);
+    font-size: 4rem;
+    margin-bottom: 20vh;
+    box-shadow: 0px 20px 20px rgb(0, 0, 0);
+}
+.header p{
+    margin-left: 9vw;
+}
+.book{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(218, 218, 218);
+    flex: 0 1 20rem;
+    font-size: 1.6rem;
+    border-radius: 40px;
+    min-height: 30vh;
+    margin-bottom: 5vh;
+    box-sizing: border-box;
+    box-shadow: 20px 20px 10px rgb(0, 0, 0);
+    
+}
+.library-container{
+    display: flex;
+    column-gap: 5vw;
+    flex-wrap: wrap;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.info-upper{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+    padding-top: 2vh;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.icons{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.btns{
+    height: 50%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.btns .btn {
+    font-family: Space Grotesk;
+    padding: 3% 12%;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    background-color: white;
+    transition: 0.15s;
+    box-shadow: 5px 5px 10px;
+}
+
+.btn.remove{
+    background-color: brown;
+}
+
+.btn.remove:hover{
+    background-color: rgb(190, 33, 33);
+}
+.btn.read:hover{
+    background-color: rgb(187, 177, 177);
+}
+.add-book-cnt{
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    right: 50%;
+    top: 175px;
+}
+
+.add-book{
+    transition: fill 0.15s;
+    fill: rgb(218, 218, 218);
+}
+.new-book{
+    color: white;
+    position: fixed;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    min-width: 400px;
+    height: 40vh;
+    min-height: 400px;
+    background-color: red;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: black 5px 5px 5px 20px;
+}
+.h-new-book{
+    font-family: Agbalumo;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.6rem;
+}
+.input{
+    background-color: rgb(218, 218, 218);
+    border: none;
+    padding: 10px 5px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}

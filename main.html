@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Kdam+Thmor+Pro&family=Raleway:wght@400;600&family=Space+Grotesk&display=swap" rel="stylesheet"><body>
+    <header class="header">
+        <p>My Library</p>
+    </header>
+    <button class="add-book-cnt" id="addBtn">
+        <svg class="add-book" id="addBookSvg" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 -960 960 960" width="100"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>        
+    </button>
+    <div class="new-book">
+        <center>
+            <p class="h-new-book">new Book:</p>
+        </center>
+        <div class="inputs">
+            <div><p>Book name:</p><input type="text" class="input name"></div>
+            <div><p>Author:</p><input type="text" class="input author"></div>
+            <div><p>Pages:</p><input type="text" class="input pages"></div>
+        </div>
+    </div>
+    <div class="library-container">
+            <div class="book">
+                    <div class="info-upper">
+                        <div class="description">
+                            <p class="name">ppp</p>
+                            <p class="author">ppp</p>
+                            <p class="pages">ppp</p>
+                        </div>
+                        <div class="icons">
+                            <img src="icons/book.svg" alt="">
+                            <img src="icons/badge.svg" alt="">
+                            <img src="icons/pages.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button class="btn read">not read</button>
+                        <button class="btn remove">remove</button>
+                </div>
+        </div>
+        
+        
+       
+        
+
 
     
     <script src="main.js"></script>
