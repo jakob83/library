@@ -3,7 +3,6 @@
     font-size: 16px;
 }
 html{
-    height: 10000px;
     font-family: Raleway;
     background-color: rgb(59, 55, 55);
     position: relative;
@@ -74,11 +73,22 @@ html{
     padding: 3% 12%;
     border-radius: 3px;
     font-size: 1.2rem;
-    background-color: white;
     transition: 0.15s;
     box-shadow: 5px 5px 10px;
+    transition: all 0.2s;
 }
-
+.green{
+    background-color: green;
+}
+.white{
+    background-color: white;
+}
+.hover-green{
+    background-color: rgb(28, 170, 28);
+}
+.hover-white{
+    background-color: rgb(163, 155, 155);
+}
 .btn.remove{
     background-color: brown;
 }
@@ -86,9 +96,7 @@ html{
 .btn.remove:hover{
     background-color: rgb(190, 33, 33);
 }
-.btn.read:hover{
-    background-color: rgb(187, 177, 177);
-}
+
 .add-book-cnt{
     background-color: rgba(0,0,0,0);
     position: absolute;
@@ -100,7 +108,30 @@ html{
     transition: fill 0.15s;
     fill: rgb(218, 218, 218);
 }
+.add-book{
+    filter: drop-shadow(8px 5px 5px rgb(0, 0, 0));
+}
 .new-book{
+    opacity: 0;
+    height: 0;
+    padding:0;
+    display: none;
+    transition: opacity .2s;
+    position: fixed;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30vw;
+    min-width: 300px;
+    height: 40vh;
+    min-height: 400px;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: black 5px 5px 5px 20px;
+}
+
+.new-book.active{
+    opacity: 1;
     color: white;
     position: fixed;
     right: 50%;
@@ -110,10 +141,12 @@ html{
     min-width: 400px;
     height: 40vh;
     min-height: 400px;
-    background-color: red;
     border-radius: 10px;
     background-color: black;
     box-shadow: black 5px 5px 5px 20px;
+}
+.new-book .inner{
+    position: relative;
 }
 .h-new-book{
     font-family: Agbalumo;
@@ -133,4 +166,41 @@ html{
     padding: 10px 5px;
     font-size: 1.2rem;
     border-radius: 5px;
+    box-shadow: gray 5px 5px 7px;
+
 }
+.close-n-book{
+    box-shadow: 0 0 0 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: black;
+
+}
+.close-popup-svg{
+    fill: white;
+}
+.finish-btn{
+    background-color: rgba(0,0,0,0);
+}
+.checkmark-svg{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    fill: white;
+}
+.checkmark-svg:hover{
+    fill: rgb(146, 143, 143);
+}
+@media screen and (max-width: 400px) {
+    .new-book.active {
+        width: 300px;
+        min-width: 0;
+    }
+    .inputs{
+        align-items: start;
+    }
+    .input{
+        width: 200px;
+    }
+  }

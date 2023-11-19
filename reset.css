@@ -48,4 +48,6 @@ button {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	padding-inline: 0;
+	padding-block: 0;
 }
