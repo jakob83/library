@@ -2,6 +2,7 @@ let addBtn = document.getElementById("addBtn");
 let addBookSvg = document.getElementById("addBookSvg");
 let newBook = document.getElementById("newBook");
 
+
 function addHover(e) {
     addBookSvg.style.fill = "gray";
 }
@@ -25,6 +26,7 @@ document.querySelector(".close-n-book").addEventListener("click", removePopup)
 
 
 
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -34,19 +36,29 @@ function Book(title, author, pages, read){
         return `${title}, author: ${author}, pages: ${pages}, read: ${read}`
     }
 };
+let library = [];
+
+
+
 
 
 let finishBtn = document.querySelector("#finishBtn");
 let libraryContainer = document.querySelector(".library-container")
+
+
 function addBook(){
     let title = document.querySelector("#inputName").value;
     let author = document.querySelector("#inputAuthor").value;
     let pages = document.querySelector("#inputPages").value;
-    return new Book(title, author, pages);
+    let newBook =  new Book(title, author, pages);
+    library.push(newBook);
 };
-function buildBook(Book){
+
+
+function buildBook(Book, index){
     let container = document.createElement("div");
-    container.setAttribute("class", "book")
+    container.setAttribute("class", "book");
+    container.setAttribute("data", index);
     container.innerHTML = `
     <div class="info-upper">
         <div class="description">
@@ -64,20 +76,33 @@ function buildBook(Book){
         <button class="btn read">not read</button>
         <button class="btn remove">remove</button>
 </div>
-    `
+    `;
     libraryContainer.appendChild(container);
 };
-finishBtn.addEventListener("click", ()=>{
-    removePopup();
-    buildBook(addBook());
+
+
+function displayBooks(){
+    let books = document.querySelectorAll(".book");
+    books.forEach(book => book.remove());
+
+    for (let i = 0; i < library.length; i++) {
+        buildBook(library[i], i);    
+    };
     let btnRead = document.querySelectorAll(".btn.read");
-    let btnRemove = document.querySelector(".btn.remove");
+    let btnRemove = document.querySelectorAll(".btn.remove");
     btnRead.forEach(btn => {
         btn.addEventListener("mouseover", readHover);
         btn.addEventListener("click", changeReadStatus);
         btn.addEventListener("mouseleave", readRemoveHover);
-        btnRemove.addEventListener("click", removeBook);
-    });    
+    }); 
+    btnRemove.forEach(btn => btn.addEventListener("click", removeBook));
+}
+
+
+finishBtn.addEventListener("click", ()=>{
+    addBook();
+    removePopup();                                                       //finish click!!!!!!!!!!!!!!!!!!!!!!!
+    displayBooks();   
 });
 
 
@@ -112,6 +137,10 @@ function readRemoveHover(e){
         e.target.classList.remove("hover-white");
     }
 };
+
 function removeBook(e){
-    e.target.parentNode.parentNode.remove();
+    let index = e.target.parentNode.parentNode.getAttribute("data");
+    library.splice(index, index+1);
+    displayBooks();
+    console.log(library);
 };
